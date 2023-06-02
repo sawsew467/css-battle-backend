@@ -6,6 +6,8 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AuthModule } from './modules/auth/auth.module';
+import { ImageComparisonController } from './modules/image-comparison/image-comparison.controller';
+import { ImageComparisonService } from './modules/image-comparison/image-comparison.service';
 import { QuestionsModule } from './modules/questions/questions.module';
 import { RoomModule } from './modules/room/room.module';
 import { UsersModule } from './modules/users/users.module';
@@ -29,6 +31,7 @@ import { SharedModule } from './shared/shared.module';
         QuestionsModule,
         RoomModule
     ],
-    providers: []
+    controllers: [ImageComparisonController],
+    providers: [ImageComparisonService]
 })
 export class AppModule {}
